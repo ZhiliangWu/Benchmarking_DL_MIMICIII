@@ -3,8 +3,9 @@ import numpy as np
 import re
 
 def getConnection():
+    return psycopg2.connect(dbname='mimic', user='XXXXXXXX', password='XXXXXX', host='localhost', port=5432, options=f'-c search_path=mimiciii')
     # return psycopg2.connect("dbname='' user='' host='' password='' port=''")
-    raise NotImplementedError
+#     raise NotImplementedError
 
 def parseUnitsMap(filename='config/unitsmap.unit'):
     with open(filename, 'r') as f:
